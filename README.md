@@ -16,5 +16,5 @@
 ##### Given a string, you need to find the length of longest substring which does not contain repeated characters. 
 ##### e.g.["pwwkew" return 3("kew")]
 ##### Again, I use dictionary to implement this. First of all, you need a mark M to track the first character without any repeating character before it. You need to dictionary to check if there is a character exists in previous substring. 
-##### e.g.["abba", {"a": 0} -> {"a": 0, "b": 1} -> you would add the second "b" to dictionary, but dictionary already has "b" in it. Now you need to store this b's index and assign it to M] 
+##### e.g.["abba", {"a": 0} -> {"a": 0, "b": 1} -> in the third iteration, program would add the index of the second "b" to dictionary, but dictionary already has "b" in it. So you need to store this b's index and assign it to M] 
 ##### The length of current valid substring can be written as [i-M +1 why plus one? I think you can figure out by yourself]Since this problem requires the length not the substring, you can simply compare the current length to maxLength for each iteration.
