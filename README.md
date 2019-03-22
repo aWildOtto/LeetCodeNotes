@@ -39,7 +39,6 @@ e.g.["abba", {"a": 0} -> {"a": 0, "b": 1} -> in the third iteration, program wou
 `Hard`
 #### Given two sorted list a and b, and find the median of a and b.
 #### You should have knowledge of [median](https://www.mathsisfun.com/median.html). 
-#### e.g. Odd Length: [1 3 5 7 9] the median is 5. Even length: [2 4 5 6] ->[2 |4 5| 6] that's so, the median should be (4+5)/2 = 4.5.
 #### Let's deduct this problem into intuitive mathmatical problem, since lists are sorted:
 
 ```
