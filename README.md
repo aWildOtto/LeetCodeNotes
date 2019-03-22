@@ -19,3 +19,5 @@
 #### e.g.["abba", {"a": 0} -> {"a": 0, "b": 1} -> in the third iteration, program would add the index of the second "b" to dictionary, but dictionary already has "b" in it. So you need to store this b's index and assign it to M] 
 #### The length of current valid substring can be written as [i-M +1 why plus one? I think you can figure out by yourself].
 #### Since this problem requires the length not the substring, you can simply compare the current length to maxLength for each iteration.
+### 4. Median of Two Sorted Arrays
+#### CNM I do not even know how I made it work. BRB
