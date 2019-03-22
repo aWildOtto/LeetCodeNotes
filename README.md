@@ -13,8 +13,9 @@
 ##### The implementation is quite straight forward. You parallelly go through each node in LL1 and LL2, and add two node up, if the sum is greater than 9 which means there is carry, you need to track carry digit. Use module to get the last digit(21/10 = 1, carry is 2). Then put the last digit into result Linked list.
 ### 3. Longest Substring Without Repeating Characters
 ###### I just realize I should include my bad approach so that you can avoid it.
-##### Given a string, you need to find the length of longest substring which does not contain repeated characters. 
+##### Given a string, you need to find the length of longest substring which does not contain repeated characters: 
 ##### e.g.["pwwkew" return 3("kew")]
 ##### Again, I use dictionary to implement this. First of all, you need a mark M to track the first character without any repeating character before it. You need to dictionary to check if there is a character exists in previous substring. 
 ##### e.g.["abba", {"a": 0} -> {"a": 0, "b": 1} -> in the third iteration, program would add the index of the second "b" to dictionary, but dictionary already has "b" in it. So you need to store this b's index and assign it to M] 
-##### The length of current valid substring can be written as [i-M +1 why plus one? I think you can figure out by yourself]Since this problem requires the length not the substring, you can simply compare the current length to maxLength for each iteration.
+##### The length of current valid substring can be written as [i-M +1 why plus one? I think you can figure out by yourself].
+##### Since this problem requires the length not the substring, you can simply compare the current length to maxLength for each iteration.
