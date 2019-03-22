@@ -39,7 +39,7 @@ e.g.["abba", {"a": 0} -> {"a": 0, "b": 1} -> in the third iteration, program wou
 `Hard`
 #### Given two sorted list a and b, and find the median of a and b.
 #### You should have knowledge of [median](https://www.mathsisfun.com/median.html). 
-#### e.g. [1, 3, 5, 7, 9] the median is 5. [2, 4 ,5 ,6] ->[2, |4, 5,| 6] that's so, the median should be (4+5)/2 = 4.5.
+#### e.g. Odd Length: [1 3 5 7 9] the median is 5. Even length: [2 4 5 6] ->[2 |4 5| 6] that's so, the median should be (4+5)/2 = 4.5.
 #### Let's deduct this problem into intuitive mathmatical problem, since lists are sorted:
 
 ```
@@ -51,9 +51,24 @@ Find the kth and kth - 1 if length is even.
 [5, 9, 11, 16, 22] kth = 5//2 = 2
  0  1   2   3   4
         |
-So 3 is median
+So 11 is the median.
 ```
-#### We are given two sorted lists, so we need to use devided and conquer
+#### We need to use devided and conquer. I would say this is the hardest part.
 
-
-To solve this question, I implement a function to find the kth minimun integer in two array. If the length of 
+```
+A:[A1 A2 A3 ... An]; len(A) = m
+B:[B1 B2 B3 ... Bn]; len(B) = n
+We nee to find kth[(m+n)//2] or (kth and kth - 1) minium integer(s) in C [A and B is cut from C[sort(A+B)]. It may sound abstract.].
+Let's cut A and B into two lists:
+[A1 A2 A3 ... A(m//2-1)] | [A(m//2) A(m//2+1) A(m//2+2) ... Am]
+          AA1                               AA2
+[B1 B2 B3 ... B(n//2-1)] | [B(n//2) B(n//2+1) B(n//2+2) ... Bn]
+          BB1                               BB2
+```
+To solve this question, I implement a function to find the kth minimun integer in two array. 
+1. For A, the median is either A(m//2-1) or (A(m//2-1) + A(m//2))/2. Same as B.
+2. If m//2 + n//2 is less than k which means the kth integer is not in either [A1 A2 A3 ... A(m//2-1)] or [B1 B2 B3 ... B(n//2-1)], and we need to wipe out some small integer, do not forget to decrease value of k. 
+3. If median(A) greater than median(B), we can get rid of BB1. Since all integer in BB1 is less than C(kth) [the kth integer]. k will be k - n//2 - 1. Vice versa
+4. If m//2 + n//2 is greater than k, you need to wipe some large integer.
+5. If median(A) greater than median(B), you need to get rid of AA2.
+6. Recursively do step 1-5
