@@ -1,5 +1,5 @@
 ## LeetCodeNotes
-## My Own LeetCode Notes (Most are written in Python and C) :)
+### My Own LeetCode Notes (Most are written in Python and C) :)
 #### This project includes all my thoughts while I am solving problems. I would not say my solution is the best and beat 99% of the submission, I aim to solve the problems in reasonable time.
 #### Special thanks to [Jiaran99](https://github.com/Jiaran98) for formatting README
 #### Find Problems [here](https://leetcode.com/problemset/all/)
@@ -41,8 +41,7 @@ e.g.["abba", {"a": 0} -> {"a": 0, "b": 1} -> in the third iteration, program wou
 
 ### 4. Median of Two Sorted Arrays:
 `Hard`
-#### Given two sorted list a and b, and find the median of a and b.
-#### You should have knowledge of [median](https://www.mathsisfun.com/median.html). 
+#### Given two sorted list a and b, and find the median of a and b. You should have knowledge of [median](https://www.mathsisfun.com/median.html). 
 #### Let's deduct this problem into intuitive mathmatical problem, since lists are sorted:
 
 ```
